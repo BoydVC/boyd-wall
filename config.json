@@ -1,0 +1,29 @@
+{
+  "port": 4848,
+  "timezone": "America/New_York",
+  "location": {"name": "Millersville, MD", "lat": 39.0598, "lon": -76.6483},
+  "botIslandUrl": "http://127.0.0.1:4747",
+  "botIslandDir": "/workspace/tokenmax/bot-island",
+  "usageFile": "/workspace/tokenmax/usage.json",
+  "researchGlob": "/workspace/ij_????-??-??_research.md",
+  "ll2Base": "https://ll.thespacedevs.com/2.3.0",
+  "ll2SpaceXAgencyId": 121,
+  "ttl": {
+    "ll2_upcoming": 1800,
+    "ll2_previous": 3600,
+    "ll2_starship": 5400,
+    "espn": 900,
+    "espn_live": 120,
+    "weather": 600,
+    "fleet": 60
+  },
+  "teams": [
+    {"key": "ravens", "name": "Ravens", "full": "Baltimore Ravens", "sport": "football", "league": "nfl", "teamId": "bal", "abbr": "BAL", "colors": ["#4c1d95", "#facc15"],
+     "standings": {"url": "https://site.api.espn.com/apis/v2/sports/football/nfl/standings?level=3", "label": "AFC North", "group": "AFC North"}},
+    {"key": "terps", "name": "Terps", "full": "Maryland Terrapins", "sport": "football", "league": "college-football", "teamId": "120", "abbr": "MD", "colors": ["#e21833", "#ffd200"],
+     "standings": {"url": "https://site.api.espn.com/apis/v2/sports/football/college-football/standings?group=5", "label": "Big Ten"}},
+    {"key": "chelsea", "name": "Chelsea", "full": "Chelsea FC", "sport": "soccer", "league": "eng.1", "teamId": "363", "abbr": "CHE", "colors": ["#034694", "#dba111"], "allCompsLeague": "all",
+     "standings": {"url": "https://site.api.espn.com/apis/v2/sports/soccer/eng.1/standings", "label": "Premier League"}},
+    {"key": "orioles", "name": "Orioles", "full": "Baltimore Orioles", "sport": "baseball", "league": "mlb", "teamId": "bal", "abbr": "BAL", "colors": ["#df4601", "#000000"], "offseason": true}
+  ]
+}
