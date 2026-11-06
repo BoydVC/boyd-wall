@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export dist/boyd-wall-snapshot.html: one self-contained file (HTML + CSS + JS + fonts + images + data)
+"""Export dist/family-wall-snapshot.html: one self-contained file (HTML + CSS + JS + fonts + images + data)
 that opens offline on any computer. Countdowns keep ticking against the viewer's clock; a banner
 makes clear the data is a snapshot.
 
@@ -57,7 +57,7 @@ def main():
     html = html.replace("<title>Alex Wall · Mission Control</title>", "<title>Alex Wall · offline snapshot</title>")
     assert 'href="style.css"' not in html and 'src="app.js"' not in html
     os.makedirs(os.path.join(HERE, "dist"), exist_ok=True)
-    out = os.path.join(HERE, "dist", "boyd-wall-snapshot.html")
+    out = os.path.join(HERE, "dist", "family-wall-snapshot.html")
     open(out, "w").write(html)
     print(f"wrote {out} ({os.path.getsize(out) / 1e6:.2f} MB, {len(images)} images inlined, data from {src}, taken {snap['takenAt']})")
 

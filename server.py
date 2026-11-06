@@ -17,8 +17,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import collect  # noqa: E402
 
-PORT = int(os.environ.get("BOYD_WALL_PORT", collect.CFG.get("port", 4848)))
-HOST = os.environ.get("BOYD_WALL_HOST", "127.0.0.1")
+PORT = int(os.environ.get("FAMILY_WALL_PORT", os.environ.get("BOYD_WALL_PORT", collect.CFG.get("port", 4848))))
+HOST = os.environ.get("FAMILY_WALL_HOST", os.environ.get("BOYD_WALL_HOST", "127.0.0.1"))
 LOOPS = {"fleet": 60, "weather": 300, "sports": 120, "spacex": 300}  # how often each part re-checks its cache
 _lock = threading.Lock()
 _state = {"wall": (collect.cache_read("wall") or {}).get("data") or {}, "runs": {}, "started": time.time()}

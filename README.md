@@ -24,7 +24,7 @@ Built by TokenMax on Oct 7, 2026 with Grok Bot weekly usage that would otherwise
 ## Run it
 
 ```bash
-cd /workspace/tokenmax/boyd-wall
+cd /workspace/tokenmax/family-wall
 ./run.sh            # starts in the background (idempotent); ./run.sh restart | ./run.sh stop
 ```
 
@@ -45,11 +45,11 @@ The stage is a fixed 1920×1080 canvas that scales to fit any screen. A 4K TV ge
 letterbox. Every minute the whole layout drifts by up to 3 px to protect OLED and plasma screens from burn-in.
 
 The server binds to `127.0.0.1` on the box. To put it on a real TV, either open the **offline snapshot** (below) on
-that machine, or run `BOYD_WALL_HOST=0.0.0.0 ./run.sh restart` on a computer the TV can reach. The code is stdlib
+that machine, or run `FAMILY_WALL_HOST=0.0.0.0 ./run.sh restart` on a computer the TV can reach. The code is stdlib
 Python 3.9+ with no installs.
 
 ### Offline snapshot
-`dist/boyd-wall-snapshot.html` is one self-contained file (1.6 MB) with the HTML, CSS, JS, fonts, team logos, the launch
+`dist/family-wall-snapshot.html` is one self-contained file (1.6 MB) with the HTML, CSS, JS, fonts, team logos, the launch
 photo and all the data inlined. Copy it anywhere and double-click it: no server or network needed. Countdowns keep
 ticking against the viewer's clock, and a purple banner shows when the data was captured. Rebuild it with
 `python3 export_snapshot.py`.
@@ -116,7 +116,7 @@ server.py              stdlib HTTP server on :4848; one background thread per so
 collect.py             fetchers, disk cache, back-off, parsers (LL2, ESPN, Open-Meteo, NWS, Bot Island, Jim's notes)
 config.json            port, location (Lakeside 39.0598,-76.6483), teams, TTLs, source URLs
 web/                   index.html · style.css (design tokens at the top) · app.js · fonts/ (Space Grotesk, JetBrains Mono; OFL)
-export_snapshot.py     builds dist/boyd-wall-snapshot.html
+export_snapshot.py     builds dist/family-wall-snapshot.html
 screenshot.sh          one 1920×1080 headless-Chrome screenshot;  refresh_screenshots.sh regenerates them all
 tests/run.sh           unit tests (tests/test_collect.py) and the CDP browser smoke test (tests/smoke.mjs)
 data/cache, data/img   cached API responses and logos/photos (safe to delete; they refill)
@@ -168,4 +168,4 @@ The smoke test drives headless Chrome over CDP and checks:
 ## Repo notes
 - **Built:** Oct 7, 2026, by TokenMax (Alex's Grok Bot) on the Grok Bot box.
 - **Run:** `./run.sh` (then open the localhost URL it prints).
-- Imported from `/workspace/tokenmax/boyd-wall` on Oct 23, 2026. node_modules, virtualenvs, logs and files over 20 MB were left out.
+- Imported from `/workspace/tokenmax/family-wall` on Oct 23, 2026. node_modules, virtualenvs, logs and files over 20 MB were left out.
