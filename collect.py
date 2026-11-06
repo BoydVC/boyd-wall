@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Boyd Wall collector: fetches public, no-key data sources, caches each one on disk,
+"""Alex Wall collector: fetches public, no-key data sources, caches each one on disk,
 and assembles a single wall.json. Every source carries a status block so the UI can
 show "live", "cached (stale)", or "data unavailable". Nothing is ever invented.
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Boyd Wall server (stdlib only): serves the wall UI on :4848 plus /api/wall.
+"""Alex Wall server (stdlib only): serves the wall UI on :4848 plus /api/wall.
 
 Each data source refreshes on its own background thread, so a slow source (Launch Library 2
 can take 30+ s per call) never blocks the others. collect.py's disk cache and TTLs keep
@@ -126,5 +126,5 @@ class Server(socketserver.ThreadingMixIn, http.server.HTTPServer):
 if __name__ == "__main__":
     for part, every in LOOPS.items():
         threading.Thread(target=loop, args=(part, every), daemon=True).start()
-    print(f"Boyd Wall running at http://{HOST}:{PORT}  (kiosk: /kiosk, ambient: /ambient)", flush=True)
+    print(f"Alex Wall running at http://{HOST}:{PORT}  (kiosk: /kiosk, ambient: /ambient)", flush=True)
     Server((HOST, PORT), Handler).serve_forever()

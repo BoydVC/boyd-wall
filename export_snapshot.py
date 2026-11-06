@@ -54,7 +54,7 @@ def main():
     snap_js = "window.__WALL_SNAPSHOT__ = " + json.dumps(snap, separators=(",", ":"), default=str).replace("</", "<\\/") + ";"
     html = html.replace('<link rel="stylesheet" href="style.css">', "<style>\n" + css + "\n</style>")
     html = html.replace('<script src="app.js"></script>', "<script>" + snap_js + "</script>\n<script>\n" + js.replace("</script", "<\\/script") + "\n</script>")
-    html = html.replace("<title>Boyd Wall · Mission Control</title>", "<title>Boyd Wall · offline snapshot</title>")
+    html = html.replace("<title>Alex Wall · Mission Control</title>", "<title>Alex Wall · offline snapshot</title>")
     assert 'href="style.css"' not in html and 'src="app.js"' not in html
     os.makedirs(os.path.join(HERE, "dist"), exist_ok=True)
     out = os.path.join(HERE, "dist", "boyd-wall-snapshot.html")

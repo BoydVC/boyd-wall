@@ -1,4 +1,4 @@
-/* Boyd Wall: mission-control dashboard. Plain JS, no dependencies.
+/* Alex Wall: mission-control dashboard. Plain JS, no dependencies.
    Data comes from /api/wall (live server) or window.__WALL_SNAPSHOT__ (offline snapshot).
    Rule: never invent numbers. Missing sources render an explicit "data unavailable" state. */
 'use strict';
@@ -406,7 +406,7 @@ function renderFleet() {
       if (b.state === 'working') s = `● working${b.doing ? ': ' + esc(b.doing) : ''}`;
       else if (b.next) s = `next ${esc(relDay(Date.parse(b.next)) === 'Today' ? '' : relDay(Date.parse(b.next)).slice(0, 3) + ' ')}${esc(timeET(Date.parse(b.next)).replace(' ET', ''))} · ${esc(b.nextName || '')}`;
       else s = b.lastActive ? `idle · last active ${esc(ago(Date.parse(b.lastActive) / 1000))}` : 'on call (no routines)';
-      return `<div class="bot ${b.state}"><div class="av" style="background:${col}">${esc(b.name.replace(/^Boyd /, '').slice(0, 1))}</div><div><div class="bn">${esc(b.name)}</div><div class="bs">${s}</div></div></div>`;
+      return `<div class="bot ${b.state}"><div class="av" style="background:${col}">${esc(b.name.replace(/^Alex /, '').slice(0, 1))}</div><div><div class="bn">${esc(b.name)}</div><div class="bs">${s}</div></div></div>`;
     }).join('');
     if (S.tickerHtml !== one) { S.tickerHtml = one; $('ticker').innerHTML = one + one; }  // duplicated for a seamless loop; untouched if unchanged
     $('ticker').style.setProperty('--tdur', Math.max(40, bots.length * 7) + 's');
