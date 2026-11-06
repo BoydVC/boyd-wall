@@ -1,7 +1,7 @@
-# 🛰️ Boyd Wall: mission control for a TV or second monitor
+# 🛰️ Alex Wall: mission control for a TV or second monitor
 
-A 1920×1080 dark "mission control" dashboard for Boyd: **SpaceX/Starship/Starlink** launches with live
-T-minus countdowns, a **Sports Desk** for the Ravens, Terps, Chelsea and Orioles, **Millersville weather with
+A 1920×1080 dark "mission control" dashboard for Alex: **SpaceX/Starship/Starlink** launches with live
+T-minus countdowns, a **Sports Desk** for the Ravens, Terps, Chelsea and Orioles, **Lakeside weather with
 the week ahead**, and a **fleet strip** showing every Grok Bot plus the TokenMax fuel gauge. It runs entirely on
 free, no-key public data, caches everything, and never makes numbers up. When a source is down, the panel says
 **DATA UNAVAILABLE** and gives the reason.
@@ -9,7 +9,7 @@ free, no-key public data, caches everything, and never makes numbers up. When a 
 Built by TokenMax on Oct 7, 2026 with Grok Bot weekly usage that would otherwise have reset unused (ideas #7 and #8 in
 `../SHORTLIST.md`). Sister project to [Bot Island](../bot-island) (port 4747).
 
-![Boyd Wall](screenshots/wall.png)
+![Alex Wall](screenshots/wall.png)
 
 | Team cards rotate every 12 s | Ambient mode (night / screensaver) |
 |---|---|
@@ -114,7 +114,7 @@ item on Jim's space wire. On the right are the current conditions, H/L, feels-li
 ```
 server.py              stdlib HTTP server on :4848; one background thread per source
 collect.py             fetchers, disk cache, back-off, parsers (LL2, ESPN, Open-Meteo, NWS, Bot Island, Jim's notes)
-config.json            port, location (Millersville 39.0598,-76.6483), teams, TTLs, source URLs
+config.json            port, location (Lakeside 39.0598,-76.6483), teams, TTLs, source URLs
 web/                   index.html · style.css (design tokens at the top) · app.js · fonts/ (Space Grotesk, JetBrains Mono; OFL)
 export_snapshot.py     builds dist/boyd-wall-snapshot.html
 screenshot.sh          one 1920×1080 headless-Chrome screenshot;  refresh_screenshots.sh regenerates them all
@@ -161,11 +161,11 @@ The smoke test drives headless Chrome over CDP and checks:
 - Cursor only shows the usage reset *date*, so the fuel gauge counts down to the earliest possible moment (00:00 UTC = 8 PM ET).
 - ESPN is an unofficial public endpoint and could change shape. Every team card degrades to DATA UNAVAILABLE instead of breaking.
 - Fleet bot "working" status comes from Bot Island's snapshot (routine last-run times and file writes), not a live agent feed.
-- The server listens on localhost on the box. A TV on Boyd's network needs the snapshot file or the server run on his own machine.
+- The server listens on localhost on the box. A TV on Alex's network needs the snapshot file or the server run on his own machine.
 
 
 ---
 ## Repo notes
-- **Built:** Oct 7, 2026, by TokenMax (Boyd's Grok Bot) on the Grok Bot box.
+- **Built:** Oct 7, 2026, by TokenMax (Alex's Grok Bot) on the Grok Bot box.
 - **Run:** `./run.sh` (then open the localhost URL it prints).
 - Imported from `/workspace/tokenmax/boyd-wall` on Oct 23, 2026. node_modules, virtualenvs, logs and files over 20 MB were left out.

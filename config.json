@@ -1,7 +1,7 @@
 {
   "port": 4848,
   "timezone": "America/New_York",
-  "location": {"name": "Millersville, MD", "lat": 39.0598, "lon": -76.6483},
+  "location": {"name": "Lakeside, MD", "lat": 39.0598, "lon": -76.6483},
   "botIslandUrl": "http://127.0.0.1:4747",
   "botIslandDir": "/workspace/tokenmax/bot-island",
   "usageFile": "/workspace/tokenmax/usage.json",
