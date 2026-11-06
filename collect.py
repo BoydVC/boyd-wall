@@ -22,7 +22,7 @@ CACHE = os.path.join(HERE, "data", "cache")
 IMG = os.path.join(HERE, "data", "img")
 CFG = json.load(open(os.path.join(HERE, "config.json")))
 ET = ZoneInfo(CFG.get("timezone", "America/New_York"))
-UA = "BoydWall/1.0 (personal wall display; contact: none)"
+UA = "FamilyWall/1.0 (personal wall display; contact: none)"
 os.makedirs(CACHE, exist_ok=True)
 os.makedirs(IMG, exist_ok=True)
 
@@ -591,7 +591,7 @@ def collect_weather(force=False):
     return out
 
 
-NWS_UA = {"User-Agent": "BoydWall/1.0 (personal wall display)", "Accept": "application/geo+json"}
+NWS_UA = {"User-Agent": "FamilyWall/1.0 (personal wall display)", "Accept": "application/geo+json"}
 
 
 def _nws_icon(text, is_day=True):

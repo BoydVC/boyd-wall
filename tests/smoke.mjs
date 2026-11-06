@@ -5,7 +5,7 @@ import {spawn} from 'node:child_process';
 import {existsSync} from 'node:fs';
 import {resolve} from 'node:path';
 const port = process.argv[2] || '4848', dbg = 9800 + Math.floor(Math.random() * 400);
-const chrome = spawn('google-chrome', ['--headless=new', '--no-sandbox', '--disable-gpu', `--remote-debugging-port=${dbg}`, '--window-size=1920,1080', `--user-data-dir=/tmp/boyd-wall-smoke-${dbg}`, 'about:blank'], {stdio: 'ignore'});
+const chrome = spawn('google-chrome', ['--headless=new', '--no-sandbox', '--disable-gpu', `--remote-debugging-port=${dbg}`, '--window-size=1920,1080', `--user-data-dir=/tmp/family-wall-smoke-${dbg}`, 'about:blank'], {stdio: 'ignore'});
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 let ws, id = 0; const pending = new Map(); let errors = [];
 async function connect() {
@@ -70,7 +70,7 @@ try {
   await open(`http://127.0.0.1:${port}/kiosk`, 2000);
   check('kiosk mode hides cursor', await ev(`document.body.classList.contains('kiosk') && getComputedStyle(document.body).cursor === 'none'`));
   // offline snapshot
-  const snap = resolve('dist/boyd-wall-snapshot.html');
+  const snap = resolve('dist/family-wall-snapshot.html');
   if (existsSync(snap)) {
     await open('file://' + snap, 2500);
     check('snapshot loads offline with banner', /OFFLINE SNAPSHOT/.test(await ev(`document.getElementById('banner').textContent`)));
